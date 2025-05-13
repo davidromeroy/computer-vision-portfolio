@@ -1,48 +1,80 @@
-# 🧠 Computer Vision Portfolio – David Romero Yánez
+# 🟢 Basic Project – Image Filters with OpenCV
 
-Welcome! This is my personal portfolio focused on computer vision projects. Here I showcase practical applications using Python, OpenCV, PyTorch and ROS, covering topics such as object detection, segmentation, OCR, and robot vision.
+This project applies basic image processing filters using OpenCV to demonstrate fundamental computer vision operations.
 
 ## 🎯 Objective
 
-Demonstrate my capabilities in building and deploying computer vision systems from scratch, using real datasets, custom code and visual demonstrations. This portfolio is intended for future employers and master’s program applications.
+- Apply basic image filters (grayscale, blur, edges, threshold, etc.)
+- Write reusable, well-structured Python code
+- Provide a Jupyter notebook to visualize results clearly
+- Make the script flexible using command-line arguments
 
----
+## 📂 Folder Structure
 
-## 📁 Project Structure
+- input/ → Input image goes here (e.g. sample.jpg)
+- output/ → Filtered images are saved here
+- filters.py → Contains all filter functions
+- main.py → Main script that applies the filters
+- filters_demo.ipynb → Notebook to visualize results
 
-| Level       | Project Description |
-|-------------|---------------------|
-| 🟢 Basic      | [Image Filters with OpenCV](./basic/image-filters-opencv) |
-| 🟡 Intermediate | [Face Detection with MediaPipe](./intermediate/face-detection-mediapipe) |
-| 🔴 Advanced    | [Object Detection with YOLOv5](./advanced/object-detection-yolov5) |
-| 📄 Practical   | [OCR on Invoices with Tesseract](./practical/ocr-invoices-tesseract) |
-| 🤖 Integrated  | [Robot Vision with ArUco and ROS](./integrated/robot-vision-aruco-ros) |
 
----
+## 🧪 Filters Available
 
-## 🎥 Demos & Results
+- `apply_grayscale`: Converts image to grayscale  
+- `apply_blur`: Applies Gaussian blur  
+- `apply_canny`: Detects edges using the Canny method  
+- `apply_threshold`: Applies binary thresholding  
+- `apply_laplacian`: Applies Laplacian operator for edge detection  
+- `apply_equalize_histogram`: Enhances contrast with histogram equalization  
 
-Each project will include:
-- A short summary
-- Technologies used
-- Installation guide
-- Visual examples (GIFs, videos)
-- Key learnings
 
----
+## 🚀 How to Run
+
+### Default (uses `input/sample.jpg`):
+```bash
+python main.py
+```
+
+### Custom image:
+```bash
+python main.py --input input/your_image.jpg
+```
+
+Make sure the image is placed inside the `input/` folder or provide the full relative path.
+
+## 🖼️ Outputs
+
+
+Here are a few examples of filters applied to the input image:
+
+| Original | Grayscale | Gaussian Blur |
+|----------|-----------|---------------|
+| ![Original](image-filters-opencv/input/sample.jpg) | ![Gray](media/gray.jpg) | ![Blur](media/blur.jpg) |
+
+| Canny Edges | Threshold | Histogram Equalization |
+|-------------|-----------|------------------------|
+| ![Edges](media/edges.jpg) | ![Threshold](media/threshold.jpg) | ![Equalized](media/histogram_equalized.jpg) |
+
+
+
+## 📓 Notebook Preview
+
+To visualize all results interactively, open `filters_demo.ipynb` using:
+
+- **Visual Studio Code** (with Jupyter support built-in), or  
+- Run in browser with:
+  ```bash
+  jupyter notebook filters_demo.ipynb
+  ```
+
 
 ## 🛠️ Tech Stack
+- Python 3.11+
 
-- Python, OpenCV, NumPy, PyTorch
-- Tesseract OCR, MediaPipe, YOLOv5
-- ROS (Noetic, Humble), Rviz, ArUco
-- Git, GitHub, VS Code
+- OpenCV
 
----
+- Matplotlib
 
-## 🔗 About Me
+- Jupyter Notebook
 
-[LinkedIn](https://www.linkedin.com/in/daroyane)  
-Mechatronics Engineer | Robotics & AI Enthusiast | Passionate about computer vision & robotics research
-
----
+- Argparse (for CLI input)
