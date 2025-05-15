@@ -28,19 +28,58 @@ This project applies basic image processing filters using OpenCV to demonstrate 
 - `apply_equalize_histogram`: Enhances contrast with histogram equalization  
 
 
-## 🚀 How to Run
+## 🛠️ Installation Guide
 
-### Default (uses `input/sample.jpg`):
+Follow these steps to set up and run the image filter tool:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/davidromeroy/computer-vision-portfolio.git
+cd computer-vision-portfolio/basic/image-filters-opencv
+```
+
+### 2. Create and activate a virtual environment
+
+On windows:
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+On macOS/Linux:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+### 4. Add input images
+Place your image(s) inside the `input/` folder. For example:
+
+
+```bash
+input/
+└── your_image.jpg
+```
+### 5. Run the program
+You can run it with the default sample image (`input/sample.jpg`):
+
 ```bash
 python main.py
 ```
 
-### Custom image:
+Or specify your own image path:
+
 ```bash
 python main.py --input input/your_image.jpg
 ```
 
-Make sure the image is placed inside the `input/` folder or provide the full relative path.
+### 6. Output
+Processed images will be saved in the `output/` folder.
 
 ## 🖼️ Outputs
 

@@ -30,5 +30,3 @@ cv2.imwrite(f"{OUTPUT_DIR}/laplacian.jpg", apply_laplacian(img))
 cv2.imwrite(f"{OUTPUT_DIR}/histogram_equalized.jpg", apply_equalize_histogram(img))
 
 print("✅ All filters applied and images saved in the 'output' folder.")
-
-#TODO: use environments

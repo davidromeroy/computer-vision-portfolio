@@ -1,29 +1,27 @@
-# Python
+# Entorno virtual
+venv/
+
+# Archivos y carpetas de salida
 __pycache__/
 *.py[cod]
-*.so
-*.ipynb_checkpoints
+output/
 
-# Jupyter Notebook
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebooks - checkpoints automáticos
 .ipynb_checkpoints/
 
-# VS Code
+# Archivos de logs u outputs innecesarios
+*.log
+
+# Configuraciones de VSCode (si usas)
 .vscode/
 
-# ROS-related
-build/
-devel/
-log/
-
-# Datasets and models
-*.h5
-*.pt
-*.pth
-*.onnx
-*.weights
-datasets/
-models/
-
-# Misc
-.DS_Store
+# Archivos de entorno (a veces útiles, pero pueden contener secretos)
 .env
+.env.*
+
+# Archivos de entorno específicos de Conda (si cambiaste de idea algún día)
+*.yml
