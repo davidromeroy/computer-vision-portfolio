@@ -12,11 +12,11 @@ Demonstrate my capabilities in building and deploying computer vision systems fr
 
 | Level       | Project Description |
 |-------------|---------------------|
-| 🟢 Basic      | [Image Filters with OpenCV](./basic/image-filters-opencv) |
-| 🟡 Intermediate | [Face Detection with MediaPipe](./intermediate/face-detection-mediapipe) |
-| 🔴 Advanced    | [Object Detection with YOLOv5](./advanced/object-detection-yolov5) |
-| 📄 Practical   | [OCR on Invoices with Tesseract](./practical/ocr-invoices-tesseract) |
-| 🤖 Integrated  | [Robot Vision with ArUco and ROS](./integrated/robot-vision-aruco-ros) |
+| 🟢 Basic      | [Image Filters with OpenCV](./basic) |
+| 🟡 Intermediate | [Face Detection with MediaPipe](./intermediate) |
+| 🔴 Advanced    | [Object Detection with YOLOv5](./advanced) |
+| 📄 Practical   | [OCR on Invoices with Tesseract](./practical) |
+| 🤖 Integrated  | [Robot Vision with ArUco and ROS](./integrated) |
 
 ---
 

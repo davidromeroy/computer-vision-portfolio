@@ -1,48 +1,115 @@
-# 🧠 Computer Vision Portfolio – David Romero Yánez
+# 🟡 Intermediate Project – Face Detection with MediaPipe
 
-Welcome! This is my personal portfolio focused on computer vision projects. Here I showcase practical applications using Python, OpenCV, PyTorch and ROS, covering topics such as object detection, segmentation, OCR, and robot vision.
+This project demonstrates real-time face detection using Google's MediaPipe framework, integrating it with OpenCV for video capture and visualization.
 
 ## 🎯 Objective
 
-Demonstrate my capabilities in building and deploying computer vision systems from scratch, using real datasets, custom code and visual demonstrations. This portfolio is intended for future employers and master’s program applications.
+- Detect faces in images and live video streams using MediaPipe
+- Practice modular, clean Python scripting
+- Support image and webcam input via command-line arguments
+- Provide visual results with annotated outputs and GIF demos
 
----
+## 📂 Folder Structure
 
-## 📁 Project Structure
+face-detection-mediapipe/
+├── README.md
+├── main.py
+├── requirements.txt
+├── assets/
+│   ├── input_image.jpg
+│   ├── output_image.jpg
+│   └── demo_video.gif
+├── input/
+│   ├── sample.jpg
+├── output/
+│   ├── detected_sample.jpg
+└── utils/
+    └── face_utils.py
 
-| Level       | Project Description |
-|-------------|---------------------|
-| 🟢 Basic      | [Image Filters with OpenCV](./basic/image-filters-opencv) |
-| 🟡 Intermediate | [Face Detection with MediaPipe](./intermediate/face-detection-mediapipe) |
-| 🔴 Advanced    | [Object Detection with YOLOv5](./advanced/object-detection-yolov5) |
-| 📄 Practical   | [OCR on Invoices with Tesseract](./practical/ocr-invoices-tesseract) |
-| 🤖 Integrated  | [Robot Vision with ArUco and ROS](./integrated/robot-vision-aruco-ros) |
 
----
 
-## 🎥 Demos & Results
+## 🧪 Features Available
 
-Each project will include:
-- A short summary
-- Technologies used
-- Installation guide
-- Visual examples (GIFs, videos)
-- Key learnings
+- `detect_faces_image`: Detects and annotates faces on static images  
+- `detect_faces_video`: Performs real-time detection from webcam or video  
+- `draw_detections`: Draws bounding boxes and confidence scores  
+- `save_output`: Saves annotated results to `output/` folder  
+- `--input`: Accepts a file path or `webcam` mode from CLI  
 
----
+## 🛠️ Installation Guide
+
+Follow these steps to set up and run the face detection tool:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/davidromeroy/computer-vision-portfolio.git
+cd computer-vision-portfolio/intermediate/face-detection-mediapipe
+```
+
+### 2. Create and activate a virtual environment
+
+On windows:
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+On macOS/Linux:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+### 4. Add input images
+Place your image(s) inside the `input/` folder. For example:
+
+
+```bash
+input/
+└── your_face_image.jpg
+```
+### 5. Run the program
+To run on a static image:
+
+```bash
+python main.py --input input/your_face_image.jpg
+```
+
+To run on your webcam:
+
+```bash
+python main.py --input webcam
+```
+
+### 6. Output
+Annotated image/video frames will be saved in the `output/` folder.
+
+## 🖼️ Outputs
+
+
+### ✅ Example Image Input & Output
+
+| Original | Input | Output |
+|----------|-----------|---------------|
+| ![Original] | ![Gray] | ![Blur] |
+
+### 🎥 Live Demo (Webcam)
+
 
 ## 🛠️ Tech Stack
+- Python 3.11+
 
-- Python, OpenCV, NumPy, PyTorch
-- Tesseract OCR, MediaPipe, YOLOv5
-- ROS (Noetic, Humble), Rviz, ArUco
-- Git, GitHub, VS Code
+- OpenCV
 
----
+- MediaPipe
 
-## 🔗 About Me
+- Numpy
 
-[LinkedIn](https://www.linkedin.com/in/daroyane)  
-Mechatronics Engineer | Robotics & AI Enthusiast | Passionate about computer vision & robotics research
+- Argparse (for CLI)
 
----
+- Jupyter Notebook (optional for visual exploration)
