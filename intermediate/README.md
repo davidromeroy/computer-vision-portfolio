@@ -12,20 +12,18 @@ This project demonstrates real-time face detection using Google's MediaPipe fram
 ## 📂 Folder Structure
 
 face-detection-mediapipe/
-├── README.md
-├── main.py
-├── requirements.txt
-├── assets/
+├── main.py               ← Entrada principal
+├── requirements.txt      ← Lista de dependencias
+├── input/                ← Imágenes a procesar
+│   ├── sample.jpg
+├── output/               ← Imágenes procesadas
+│   ├── detected_sample.jpg
+├── assets/               ← Archivos para el README (GIFs, etc.)
 │   ├── input_image.jpg
 │   ├── output_image.jpg
 │   └── demo_video.gif
-├── input/
-│   ├── sample.jpg
-├── output/
-│   ├── detected_sample.jpg
 └── utils/
-    └── face_utils.py
-
+    └── face_utils.py     ← Lógica de detección facial
 
 
 ## 🧪 Features Available
