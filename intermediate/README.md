@@ -1,38 +1,34 @@
 # 🟡 Intermediate Project – Face Detection with MediaPipe
 
-This project demonstrates real-time face detection using Google's MediaPipe framework, integrating it with OpenCV for video capture and visualization.
+This project allows to detect or blur faces automatically in images or using the camera in real time, using **MediaPipe** and **OpenCV**.
 
 ## 🎯 Objective
 
-- Detect faces in images and live video streams using MediaPipe
-- Practice modular, clean Python scripting
-- Support image and webcam input via command-line arguments
-- Provide visual results with annotated outputs and GIF demos
+- 📷 Detect faces in images.
+- 🌫️ Blur faces automatically.
+- 🎥 Do it in real time from the webcam.
+- 🧠 Interactive mode by console or CLI arguments.
+
+## 📦 Requirements
+
+- Python 3.10+
+- pip
+
 
 ## 📂 Folder Structure
 
+```
 face-detection-mediapipe/
-├── main.py               ← Entrada principal
-├── requirements.txt      ← Lista de dependencias
-├── input/                ← Imágenes a procesar
+├── main.py                       ← Main entry point
+├── face_detection_demo.ipynb     ← Project notebook
+├── requirements.txt              ← Dependency list
+├── input/                        ← Input images to process
 │   ├── sample.jpg
-├── output/               ← Imágenes procesadas
+├── output/                       ← Processed output images
 │   ├── detected_sample.jpg
-├── assets/               ← Archivos para el README (GIFs, etc.)
-│   ├── input_image.jpg
-│   ├── output_image.jpg
-│   └── demo_video.gif
 └── utils/
-    └── face_utils.py     ← Lógica de detección facial
-
-
-## 🧪 Features Available
-
-- `detect_faces_image`: Detects and annotates faces on static images  
-- `detect_faces_video`: Performs real-time detection from webcam or video  
-- `draw_detections`: Draws bounding boxes and confidence scores  
-- `save_output`: Saves annotated results to `output/` folder  
-- `--input`: Accepts a file path or `webcam` mode from CLI  
+    └── face_utils.py             ← Face detection logic
+```
 
 ## 🛠️ Installation Guide
 
@@ -63,32 +59,51 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+
 ### 4. Add input images
 Place your image(s) inside the `input/` folder. For example:
-
 
 ```bash
 input/
 └── your_face_image.jpg
 ```
+
 ### 5. Run the program
-To run on a static image:
+
+🖐 **Interactive mode:**
+```bash
+python3 main.py
+```
+You will be asked:
+- Which image to process (from the input/ folder, or you can type webcam).
+- What action you want to perform (1 to detect, 2 to blur)
+    
+🖼 **Image mode with arguments:**
 
 ```bash
-python main.py --input input/your_face_image.jpg
+python3 main.py --input friends.png --mode detect
 ```
 
-To run on your webcam:
+Or:
 
 ```bash
-python main.py --input webcam
+python3 main.py --input friends.png --mode detect
+```
+The image must be in the `input/` folder.
+
+📸 **Direct webcam mode:**
+```bash
+python3 main.py --input webcam --mode detect
+```
+Or to blur:
+```bash
+python3 main.py --input webcam --mode blur
 ```
 
-### 6. Output
+### 6. 📂 Output
 Annotated image/video frames will be saved in the `output/` folder.
-
-## 🖼️ Outputs
-
+- `detected_friends.jpg`
+- `blurred_friends.jpg`
 
 ### ✅ Example Image Input & Output
 
@@ -99,15 +114,6 @@ Annotated image/video frames will be saved in the `output/` folder.
 ### 🎥 Live Demo (Webcam)
 
 
-## 🛠️ Tech Stack
-- Python 3.11+
 
-- OpenCV
-
-- MediaPipe
-
-- Numpy
-
-- Argparse (for CLI)
-
-- Jupyter Notebook (optional for visual exploration)
+## 🧑‍💻 Autor
+David Romero Yánez
