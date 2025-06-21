@@ -105,13 +105,56 @@ Annotated image/video frames will be saved in the `output/` folder.
 - `detected_friends.jpg`
 - `blurred_friends.jpg`
 
-### ✅ Example Image Input & Output
 
-| Original | Input | Output |
-|----------|-----------|---------------|
-| ![Original] | ![Gray] | ![Blur] |
+<h2>📸 Visual Results - Static Images</h2>
+<table style="width:100%; table-layout: fixed;">
+  <thead>
+    <tr>
+      <th style="text-align:center;">Original</th>
+      <th style="text-align:center;">Detection</th>
+      <th style="text-align:center;">Blur</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="./media/friends.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+      <td><img src="./media/detected_friends.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+      <td><img src="./media/blurred_friends.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+    </tr>
+    <tr>
+      <td><img src="./media/graduationIA.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+      <td><img src="./media/detected_graduationIA.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+      <td><img src="./media/blurred_graduationIA.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+    </tr>
+    <tr>
+      <td><img src="./media/meeting.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+      <td><img src="./media/detected_meeting.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+      <td><img src="./media/blurred_meeting.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+    </tr>
+  </tbody>
+</table>
 
-### 🎥 Live Demo (Webcam)
+
+
+
+<h2>🎥 Results - Captures from Webcam</h2>
+
+<table style="width:100%; table-layout: fixed;">
+  <thead>
+    <tr>
+      <th style="text-align:center;">Original Webcam</th>
+      <th style="text-align:center;">Detection</th>
+      <th style="text-align:center;">Blur</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="./media/webcam_original.png" style="width:100%; max-width:250px; object-fit:cover;"></td>
+      <td><img src="./media/webcam_detected.png" style="width:100%; max-width:250px; object-fit:cover;"></td>
+      <td><img src="./media/webcam_blurred.png" style="width:100%; max-width:250px; object-fit:cover;"></td>
+    </tr>
+  </tbody>
+</table>
 
 
 
