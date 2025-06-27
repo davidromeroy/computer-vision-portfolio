@@ -1,33 +1,61 @@
-# main.py
+import sys
+import cv2
+from games import game
+from vision import vision
 
-import argparse
-import os
-from utils.ocr_utils import *
+def main():
+    hand_tracker = vision.HandTracker()
+    paddle_game = game.PaddleGame()
 
-# def prompt_action():
-#     while True:
-#         print("\n¿Qué acción deseas realizar?")
-#         print("0. Salir")
-#         print("1. Detectar rostros")
-#         print("2. Difuminar rostros")
-#         choice = input("Selecciona (0, 1 o 2): ").strip()
+    print("Modo de jugador 2:")
+    print("1. Automático")
+    print("2. Controlado por segunda mano")
+    opcion = input("Selecciona una opción (1 o 2): ")
+    if opcion == "2":
+        paddle_game.mode_player2 = "hand"
+    else:
+        paddle_game.mode_player2 = "auto"
 
-#         match choice:
-#             case "1":
-#                 return "detect"
-#             case "2":
-#                 return "blur"
-#             case "0":
-#                 print("👋 Saliendo del programa.")
-#                 exit()
-#             case _:
-#                 print("❌ Opción inválida. Intenta de nuevo.")
+    running = True
+    while running:
+        frame, results = hand_tracker.get_frame()
+        if frame is None:
+            break
 
-image_path = "input/transferencia.jpeg"
-output_path = "output/factura1_text.txt"
+        # Control jugador 1 (mano izquierda)
+        if results and results.multi_hand_landmarks:
+            hand1 = results.multi_hand_landmarks[0]
+            hand_tracker.draw_landmarks(frame, hand1)
+            y_norm_1 = hand1.landmark[0].y
+            new_paddle1_y = int(y_norm_1 * paddle_game.height) - paddle_game.paddle_height // 2
+            paddle_game.update_paddle_y(new_paddle1_y)
 
-texto = extract_text_easyocr(image_path)
-print(texto)
+            # Control jugador 2 (si modo = hand y hay segunda mano)
+            if paddle_game.mode_player2 == "hand" and len(results.multi_hand_landmarks) > 1:
+                hand2 = results.multi_hand_landmarks[1]
+                hand_tracker.draw_landmarks(frame, hand2)
+                y_norm_2 = hand2.landmark[0].y
+                new_paddle2_y = int(y_norm_2 * paddle_game.height) - paddle_game.paddle_height // 2
+                paddle_game.paddle2_y = max(0, min(new_paddle2_y, paddle_game.height - paddle_game.paddle_height))
 
-with open(output_path, "w", encoding="utf-8") as f:
-    f.write(texto)
+        # Actualizar lógica
+        paddle_game.update_ball()
+        if paddle_game.mode_player2 == "auto":
+            paddle_game.update_ai_paddle()
+
+        # Dibujar y actualizar
+        running = paddle_game.handle_events()
+        paddle_game.draw()
+        paddle_game.tick()
+
+        # Mostrar cámara con landmarks
+        cv2.imshow("Camara", frame)
+        if cv2.waitKey(1) & 0xFF == 27:  # ESC para salir
+            break
+
+    hand_tracker.release()
+    paddle_game.quit()
+    sys.exit()
+
+if __name__ == "__main__":
+    main()
