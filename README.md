@@ -1,6 +1,6 @@
 # 🧠 Computer Vision Portfolio – David Romero Yánez
 
-Welcome! This is my personal portfolio focused on computer vision projects. Here I showcase practical applications using Python, OpenCV, PyTorch and ROS, covering topics such as object detection, segmentation, OCR, and robot vision.
+Welcome! This is my personal portfolio focused on computer vision projects. Here I showcase practical applications using Python, OpenCV, PyTorch and ROS, covering topics such as object detection, segmentation and robot vision.
 
 ## 🎯 Objective
 
@@ -15,7 +15,7 @@ Demonstrate my capabilities in building and deploying computer vision systems fr
 | 🟢 Basic      | [Image Filters with OpenCV](./basic) |
 | 🟡 Intermediate | [Face Detection with MediaPipe](./intermediate) |
 | 🔴 Advanced    | [Object Detection with YOLOv5](./advanced) |
-| 📄 Practical   | [OCR on Invoices with Tesseract](./practical) |
+| 📄 Practical   | [Body-Controlled Games](./practical) |
 | 🤖 Integrated  | [Robot Vision with ArUco and ROS](./integrated) |
 
 ---
@@ -34,7 +34,7 @@ Each project will include:
 ## 🛠️ Tech Stack
 
 - Python, OpenCV, NumPy, PyTorch
-- Tesseract OCR, MediaPipe, YOLOv5
+- Pygame, MediaPipe, YOLOv5
 - ROS (Noetic, Humble), Rviz, ArUco
 - Git, GitHub, VS Code
 

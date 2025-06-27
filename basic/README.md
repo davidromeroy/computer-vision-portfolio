@@ -36,7 +36,7 @@ Follow these steps to set up and run the image filter tool:
 
 ```bash
 git clone https://github.com/davidromeroy/computer-vision-portfolio.git
-cd computer-vision-portfolio/basic/image-filters-opencv
+cd computer-vision-portfolio/basic
 ```
 
 ### 2. Create and activate a virtual environment
@@ -88,11 +88,11 @@ Here are a few examples of filters applied to the input image:
 
 | Original | Grayscale | Gaussian Blur |
 |----------|-----------|---------------|
-| ![Original](image-filters-opencv/input/sample.jpg) | ![Gray](media/gray.jpg) | ![Blur](media/blur.jpg) |
+| ![Original](input/sample.jpg) | ![Gray](assets/gray.jpg) | ![Blur](assets/blur.jpg) |
 
 | Canny Edges | Threshold | Histogram Equalization |
 |-------------|-----------|------------------------|
-| ![Edges](media/edges.jpg) | ![Threshold](media/threshold.jpg) | ![Equalized](media/histogram_equalized.jpg) |
+| ![Edges](assets/edges.jpg) | ![Threshold](assets/threshold.jpg) | ![Equalized](assets/histogram_equalized.jpg) |
 
 
 

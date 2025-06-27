@@ -1,4 +1,4 @@
-# 🧠 Computer Vision Portfolio – David Romero Yánez
+# 🤖 Integrated Project – Robot Vision with ArUco and ROS
 
 Welcome! This is my personal portfolio focused on computer vision projects. Here I showcase practical applications using Python, OpenCV, PyTorch and ROS, covering topics such as object detection, segmentation, OCR, and robot vision.
 

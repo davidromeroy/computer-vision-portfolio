@@ -18,7 +18,7 @@ This project allows to detect or blur faces automatically in images or using the
 ## 📂 Folder Structure
 
 ```
-face-detection-mediapipe/
+intermediate/
 ├── main.py                       ← Main entry point
 ├── face_detection_demo.ipynb     ← Project notebook
 ├── requirements.txt              ← Dependency list
@@ -38,7 +38,7 @@ Follow these steps to set up and run the face detection tool:
 
 ```bash
 git clone https://github.com/davidromeroy/computer-vision-portfolio.git
-cd computer-vision-portfolio/intermediate/face-detection-mediapipe
+cd computer-vision-portfolio/intermediate
 ```
 
 ### 2. Create and activate a virtual environment
@@ -117,19 +117,19 @@ Annotated image/video frames will be saved in the `output/` folder.
   </thead>
   <tbody>
     <tr>
-      <td><img src="./media/friends.png" style="width:250px; height:200px; object-fit:cover;"/></td>
-      <td><img src="./media/detected_friends.png" style="width:250px; height:200px; object-fit:cover;"/></td>
-      <td><img src="./media/blurred_friends.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+      <td><img src="./assets/friends.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+      <td><img src="./assets/detected_friends.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+      <td><img src="./assets/blurred_friends.png" style="width:250px; height:200px; object-fit:cover;"/></td>
     </tr>
     <tr>
-      <td><img src="./media/graduationIA.png" style="width:250px; height:200px; object-fit:cover;"/></td>
-      <td><img src="./media/detected_graduationIA.png" style="width:250px; height:200px; object-fit:cover;"/></td>
-      <td><img src="./media/blurred_graduationIA.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+      <td><img src="./assets/graduationIA.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+      <td><img src="./assets/detected_graduationIA.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+      <td><img src="./assets/blurred_graduationIA.png" style="width:250px; height:200px; object-fit:cover;"/></td>
     </tr>
     <tr>
-      <td><img src="./media/meeting.png" style="width:250px; height:200px; object-fit:cover;"/></td>
-      <td><img src="./media/detected_meeting.png" style="width:250px; height:200px; object-fit:cover;"/></td>
-      <td><img src="./media/blurred_meeting.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+      <td><img src="./assets/meeting.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+      <td><img src="./assets/detected_meeting.png" style="width:250px; height:200px; object-fit:cover;"/></td>
+      <td><img src="./assets/blurred_meeting.png" style="width:250px; height:200px; object-fit:cover;"/></td>
     </tr>
   </tbody>
 </table>
@@ -149,9 +149,9 @@ Annotated image/video frames will be saved in the `output/` folder.
   </thead>
   <tbody>
     <tr>
-      <td><img src="./media/webcam_original.png" style="width:100%; max-width:250px; object-fit:cover;"></td>
-      <td><img src="./media/webcam_detected.png" style="width:100%; max-width:250px; object-fit:cover;"></td>
-      <td><img src="./media/webcam_blurred.png" style="width:100%; max-width:250px; object-fit:cover;"></td>
+      <td><img src="./assets/webcam_original.png" style="width:100%; max-width:250px; object-fit:cover;"></td>
+      <td><img src="./assets/webcam_detected.png" style="width:100%; max-width:250px; object-fit:cover;"></td>
+      <td><img src="./assets/webcam_blurred.png" style="width:100%; max-width:250px; object-fit:cover;"></td>
     </tr>
   </tbody>
 </table>

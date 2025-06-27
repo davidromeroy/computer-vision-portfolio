@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-# 📄  Practical Project – OCR Invoices with EasyOCR
-
-Este proyecto realiza reconocimiento óptico de caracteres (OCR) sobre facturas o documentos escaneados utilizando [EasyOCR](https://github.com/JaidedAI/EasyOCR). Fue desarrollado como parte de mi portafolio de visión por computadora.
-
-## 🧠 Tecnologías
-- Python 3.10+
-- EasyOCR
-- OpenCV
-- Tesseract (en pruebas)
-- Virtualenv
-=======
 # 📄 Practical Project –  Body-Controlled Games – Hand-Tracked Pong
 
 This project allows you to play Pong using only your hand tracked in real time with a webcam. Built with **MediaPipe**, **OpenCV**, and **PyGame**, it's a scalable base for other body-controlled games.
@@ -20,30 +8,14 @@ This project allows you to play Pong using only your hand tracked in real time w
 - 🧠 Use MediaPipe to track hand position.
 - 🕹️ Play a simplified version of Pong.
 - 🧩 Modular structure to add more games and input modes later.
->>>>>>> e03aa41fdfe788461beb40fa39544840bf9ec145
 
 ## 📦 Requirements
 - Python 3.9+
 - pip
 
-<<<<<<< HEAD
-## 📁 Folder Structure
-
-```
-ocr-invoices-tesseract/
-│
-├── input/ # Imágenes de entrada
-│ └── transferencia.jpg # Ejemplo de entrada
-├── output/ # Archivos de texto con resultados
-├── utils/
-│ └── ocr_utils.py # Funciones OCR
-├── main.py # Script principal
-└── requirements.txt # Dependencias
-```
-=======
 ## 📁 Project Structure
 ```
-vision-controller/
+practical/
 ├── main.py                  ← Game launcher with menu
 ├── games/
 │   ├── pong/
@@ -57,70 +29,9 @@ vision-controller/
 └── README.md
 ```
 
->>>>>>> e03aa41fdfe788461beb40fa39544840bf9ec145
 
 ## 🛠️ Installation Guide
 
-<<<<<<< HEAD
-## 🛠️ Installation Guide
-Follow these steps to set up and run the face detection tool:
-
-### 1. Clone the repository
-```
-git clone https://github.com/davidromeroy/computer-vision-portfolio.git
-cd computer-vision-portfolio/intermediate/ocr-
-```
-
-### 2. Create and activate a virtual environment
-
-On windows:
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-On macOS/Linux:
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-### 3. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Add input images
-Place your image(s) inside the `input/` folder. For example:
-
-```bash
-input/
-└── your_image.jpg
-```
-
-## 5. Run the program
-### Run example
-```
-python main.py input/transferencia.jpeg -o output/factura_text.txt
-```
-
-### Output example
-
-```
-Banco del Pueblo S.A.
-Transferencia: $12.50
-Fecha: 2024-11-03
-Destinatario: Juan Pérez
-...
-```
----
-
-
-## Autor
-Hecho con ❤️ por David Romero Yánez
-
-
-=======
 Follow these steps to install and run the Pong demo:
 
 ### 1. Clone the repository
@@ -232,4 +143,3 @@ python3 main.py --input friends.png --mode detect
 
 ## 🧑‍💻 Autor
 David Romero Yánez
->>>>>>> e03aa41fdfe788461beb40fa39544840bf9ec145
