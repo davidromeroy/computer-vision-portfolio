@@ -24,15 +24,29 @@ def main():
 
         # Control jugador 1 (mano izquierda)
         if results and results.multi_hand_landmarks:
-            hand1 = results.multi_hand_landmarks[0]
-            hand_tracker.draw_landmarks(frame, hand1)
-            y_norm_1 = hand1.landmark[0].y
-            new_paddle1_y = int(y_norm_1 * paddle_game.height) - paddle_game.paddle_height // 2
-            paddle_game.update_paddle_y(new_paddle1_y)
+            # Ordena las manos por coordenada X (de izquierda a derecha)
+            hands_sorted = sorted(
+                results.multi_hand_landmarks,
+                key=lambda hand: hand.landmark[0].x
+            )
+            
+            # Jugador 1 → mano más a la izquierda
+            if len(hands_sorted) >= 1:
+                hand1 = hands_sorted[0]
+                hand_tracker.draw_landmarks(frame, hand1)
+                y_norm_1 = hand1.landmark[0].y
+                new_paddle1_y = int(y_norm_1 * paddle_game.height) - paddle_game.paddle_height // 2
+                paddle_game.update_paddle_y(new_paddle1_y)
 
-            # Control jugador 2 (si modo = hand y hay segunda mano)
-            if paddle_game.mode_player2 == "hand" and len(results.multi_hand_landmarks) > 1:
-                hand2 = results.multi_hand_landmarks[1]
+            # hand1 = results.multi_hand_landmarks[0]
+            # hand_tracker.draw_landmarks(frame, hand1)
+            # y_norm_1 = hand1.landmark[0].y
+            # new_paddle1_y = int(y_norm_1 * paddle_game.height) - paddle_game.paddle_height // 2
+            # paddle_game.update_paddle_y(new_paddle1_y)
+
+            # Jugador 2 (si está en modo hand y hay 2 manos)
+            if paddle_game.mode_player2 == "hand" and len(results.hands_sorted) >=2:
+                hand2 = results.hands_sorted[1]
                 hand_tracker.draw_landmarks(frame, hand2)
                 y_norm_2 = hand2.landmark[0].y
                 new_paddle2_y = int(y_norm_2 * paddle_game.height) - paddle_game.paddle_height // 2

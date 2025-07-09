@@ -24,6 +24,17 @@ class PaddleGame:
         # Modo jugador 2: "auto" o "hand"
         self.mode_player2 = "auto"  # Cambia a "hand" para control dual
 
+        # Dificultad: "facil", "media", "dificil"
+        self.difficulty = "dificil"  # puedes cambiarla luego desde el menú si deseas
+
+        # Velocidad IA según dificultad
+        self.ai_speed = {
+            "facil": 2,
+            "media": 4,
+            "dificil": 7
+        }[self.difficulty]
+
+
 
         # Pelota
         self.ball_radius = 10
@@ -32,7 +43,7 @@ class PaddleGame:
         self.base_speed = 20
         self.speed_multiplier = 1.0
         self.ball_vel_x = -self.base_speed
-        self.ball_vel_y = random.choice([-3, 3])
+        self.ball_vel_y = random.choice([-5, 5])
 
         # Puntaje
         self.score = 0
@@ -86,19 +97,41 @@ class PaddleGame:
             self.ball_vel_y *= -1
 
         # Rebote con paleta
-        if (
-            self.paddle_x < self.ball_x - self.ball_radius < self.paddle_x + self.paddle_width
-            and self.paddle_y < self.ball_y < self.paddle_y + self.paddle_height
-        ):
-            self.ball_vel_x *= -1
+        # if (
+        #     self.paddle_x < self.ball_x - self.ball_radius < self.paddle_x + self.paddle_width
+        #     and self.paddle_y < self.ball_y < self.paddle_y + self.paddle_height
+        # ):
+        #     self.ball_vel_x *= -1
 
-        # Rebote con paleta 2 (auto o control humano)
+        # Colisión con paleta izquierda (jugador)
         if (
-            self.paddle2_x < self.ball_x + self.ball_radius < self.paddle2_x + self.paddle_width
-            and self.paddle2_y < self.ball_y < self.paddle2_y + self.paddle_height
+            self.ball_vel_x < 0 and
+            self.ball_x - self.ball_radius <= self.paddle_x + self.paddle_width and
+            self.paddle_y <= self.ball_y <= self.paddle_y + self.paddle_height
         ):
+            self.ball_x = self.paddle_x + self.paddle_width + self.ball_radius  # evitar superposición
             self.ball_vel_x *= -1
             self.increase_speed()
+
+
+
+        # Rebote con paleta 2 (auto o control humano)
+        # if (
+        #     self.paddle2_x < self.ball_x + self.ball_radius < self.paddle2_x + self.paddle_width
+        #     and self.paddle2_y < self.ball_y < self.paddle2_y + self.paddle_height
+        # ):
+        #     self.ball_vel_x *= -1
+        #     self.increase_speed()
+        # Colisión con paleta derecha (rival)
+        if (
+            self.ball_vel_x > 0 and
+            self.ball_x + self.ball_radius >= self.paddle2_x and
+            self.paddle2_y <= self.ball_y <= self.paddle2_y + self.paddle_height
+        ):
+            self.ball_x = self.paddle2_x - self.ball_radius  # evitar superposición
+            self.ball_vel_x *= -1
+            self.increase_speed()
+
 
 
         # Reinicio si se va la bola por la derecha
@@ -123,16 +156,20 @@ class PaddleGame:
         self.base_speed = 20
         self.speed_multiplier = 1.0
         self.ball_vel_x = -self.base_speed
-        self.ball_vel_y = random.choice([-3, 3])
+        self.ball_vel_y = random.choice([-5, 5])
         # self.score = 0
         # self.score_ai = 0
 
     def update_ai_paddle(self):
+        target_y = self.ball_y
+        center_y = self.paddle2_y + self.paddle_height // 2
+
         # Movimiento automático del paddle 2 para seguir la pelota
-        if self.ball_y > self.paddle2_y + self.paddle_height // 2:
-            self.paddle2_y += 4
-        elif self.ball_y < self.paddle2_y + self.paddle_height // 2:
-            self.paddle2_y -= 4
+        if target_y > center_y:
+            self.paddle2_y += self.ai_speed
+        elif target_y < center_y:
+            self.paddle2_y -= self.ai_speed
+
         self.paddle2_y = max(0, min(self.paddle2_y, self.height - self.paddle_height))
 
 
